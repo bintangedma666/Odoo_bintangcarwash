@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    
+        <menuitem id="bintangcarwash_menu_root" name="Bintang Carwash" sequence="10"/>
+        <menuitem id="bintangcarwash_datamaster_menu_categ" name="Data Pencucian" parent='bintangcarwash_menu_root' sequence="10"/>
+        <menuitem id="bintangcarwash_ordercucian_menu_categ" name="Operasional" 
+        parent='bintangcarwash_menu_root' sequence="10"/>
+    </data>
+</odoo>

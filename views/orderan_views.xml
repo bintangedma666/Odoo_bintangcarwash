@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="bintangcarwash_ordercucian_view_tree" model="ir.ui.view">
+            <field name="name">bintangcarwash.ordercucian.view.tree</field>
+            <field name="model">bintangcarwash.ordercucian</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="jumlah_pesanan" />
+                    <field name="tanggal_pesan" />
+                    <field name="total_harga" />
+                </tree>
+            </field>
+        </record>
+ 
+        <record id="bintangcarwash_ordercucian_view_form" model="ir.ui.view">
+            <field name="name">bintangcarwash.ordercucian.view.form</field>
+            <field name="model">bintangcarwash.ordercucian</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <sheet>
+                        <group>
+                            <field name="tanggal_pesan" />
+                        </group>
+                        <group>
+                            <field name="jumlah_pesanan" />
+                        </group>
+                        <group>
+                            <field name="total_harga" />
+                        </group>
+                        <notebook>
+                            <page name="Detail Order" string="Detail Order">
+                                <field name="detailcucian_ids">
+                                    <tree editable='bottom'>
+                                        <field name="models_id" />
+                                        <field name="harga" />
+                                        <field name="jumlah" />
+                                        <field name="jumlah_harga" sum="Total Tagihan" />
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+ 
+        <record id="bintangcarwash_ordercucian_action" model="ir.actions.act_window">
+            <field name="name">Data Orderan</field>
+            <field name="res_model">bintangcarwash.ordercucian</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create new order
+                </p>
+            </field>
+        </record>
+ 
+        <menuitem
+            id="bintangcarwash_ordercucian_menu"
+            name="Order"
+            action="bintangcarwash_ordercucian_action"
+            parent="bintangcarwash_ordercucian_menu_categ"
+            sequence="10"/>
+ 
+    </data>
+</odoo>

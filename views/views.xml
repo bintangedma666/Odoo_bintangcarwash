@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record id="bintangcarwash_jeniscucian_tree" model="ir.ui.view">
+      <field name="name">bintangcarwash.jeniscucian.view.tree</field>
+      <field name="model">bintangcarwash.jeniscucian</field>
+      <field name="arch" type="xml">
+          <tree string="Product Tree">
+            <field name="name" />
+            <field name="ukuran" />
+            <field name="tipe" />
+            <field name="teknik_id" />
+            <field name="air" />
+            <field name="harga" />
+            <field name="active" />
+          </tree>
+      </field>
+    </record>
+ 
+    <record id="bintangcarwash_jeniscucian_action" model="ir.actions.act_window">
+      <field name="name">bintangcarwash.jeniscucian.action</field>
+      <field name="res_model">bintangcarwash.jeniscucian</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">
+            Bahan cucian
+        </p>
+      </field>
+    </record>
+ 
+    <record id="bintangcarwash_jeniscucian_view_form" model="ir.ui.view">
+      <field name="name">bintangcarwash.jeniscucian.view.form</field>
+      <field name="model">bintangcarwash.jeniscucian</field>
+      <field name="arch" type="xml">
+          <form>
+            <sheet>
+            <group>
+              <!-- Add your group fields here -->
+              <group colspan='4'>
+                <group colspan='2'>
+                  <separator string='JENIS PENCUCIAN'/>
+                    <field name="name" />
+                    <field name="ukuran" />
+                </group>
+                <group colspan='2'>
+                  <separator string='JENIS MOBIL'/>
+                    <field name="tipe" /> 
+                </group>
+                <notebook>
+                  <page string="HARGA">
+                    <field name="harga" />
+                  </page>
+                  <page string="Deskripsi Teknik Cuci">
+                    <field name="teknik_id" />
+                    <field name="deskripsi" />
+                  </page>
+                </notebook>
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="bintangcarwash_jeniscucian_view_search" model="ir.ui.view">
+      <field name="name">bintangcarwash.jeniscucian.view.search</field>
+      <field name="model">bintangcarwash.jeniscucian</field>
+      <field name="arch" type="xml">
+        <search string="Pencarian">
+          <field name="name" />
+          <field name="tipe" />
+          <filter name="convertible" string="Convertible" domain="[('tipe', 'ilike', 'convertible')]"/>
+          <filter name="coupe" string="Coupe" domain="[('tipe', 'ilike', 'coupe')]"/>
+          <filter name="hatchback" string="Hatchback" domain="[('tipe', 'ilike', 'hatchback')]"/>
+          <filter name="minivan" string="Minivan" domain="[('tipe', 'ilike', 'minivan')]"/>
+          <filter name="suv" string="SUV" domain="[('tipe', 'ilike', 'suv')]"/>
+          <filter name="sedan" string="Sedan" domain="[('tipe', 'ilike', 'sedan')]"/>
+          <filter name="wagon" string="Wagon" domain="[('tipe', 'ilike', 'wagon')]"/>
+        </search>
+      </field>
+    </record>
+
+
+    <menuitem
+      id="bintangcarwash_bahancucian_menu_act"
+      name="Jenis Bahan"
+      parent="bintangcarwash_datamaster_menu_categ"
+      action="bintangcarwash_jeniscucian_action" sequence="1" />
+  </data>
+</odoo>

@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_bintangcarwash_jeniscucian,access.bintangcarwash.jeniscucian,model_bintangcarwash_jeniscucian,,1,1,1,1
+access_bintangcarwash_caracuci,access.bintangcarwash.caracuci,model_bintangcarwash_caracuci,,1,1,1,1
+access_bintangcarwash_ordercucian,access.bintangcarwash.ordercucian,model_bintangcarwash_ordercucian,,1,1,1,1
+access_bintangcarwash_detailpesanan,access.bintangcarwash.detailpesanan,model_bintangcarwash_detailpesanan,,1,1,1,1
